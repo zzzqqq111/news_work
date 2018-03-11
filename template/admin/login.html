@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>登录</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,
+    	maximum-scale=1,user-scalable=no">
+	<link rel="stylesheet" type="text/css" href="{CSS_PATH}/base.css">
+	<link rel="stylesheet" type="text/css" href="{CSS_PATH}/login.css">
+	<script src="{JS_PATH}/yidong.js"></script>
+</head>
+<body>
+	<div class="background">
+		<div class="mask">
+			<form action="index.php?m=admin&f=login&a=check" method="post" class="box">
+				<div class="uname-box">
+					<input type="text" class="uname-txt" name="mname">
+					<span class="uname">用户名</span>
+					<span class="line">|</span>
+				</div>
+				<div class="upwd-box">
+					<input type="text" class="uname-txt" name="mpass">
+					<span class="uname">密码</span>
+					<span class="line">|</span>
+				</div>
+
+				<div class="uyzm-box">
+					<input type="text" class="uyzm-txt" name="code">
+					<span class="uname">验证码</span>
+					<img src="index.php?m=admin&f=login&a=code" alt="" style="width: 35%;height: 100%;cursor: pointer;position: absolute;top:0;right: 0;"  title="点击刷新验证码" onclick="this.src=this.src+'&code='+Math.random();" name="code">
+				</div>
+
+				<input type="submit" class="login-register login" value="登录">
+
+			</form>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="{CSS_PATH}/list.css">
+    <link rel="stylesheet" href="{CSS_PATH}/base.css">
+    <script src="{JS_PATH}/rem.js"></script>
+</head>
+<body style="background-color: #F5F5F5">
+<header>
+    <span class="title">商品列表</span>
+    <span class="return">&#xe612;</span>
+    <div class="ss">
+        <div class="ss-title">
+            <span>Title</span>
+            <span class="dash"></span>
+            <input type="text" placeholder="Please find here" class="">
+        </div>
+        <span class="iconfont yuyin">&#xe62a;</span>
+    </div>
+</header>
+    <div class="product-lists">
+        <ul>
+            {foreach $result as $v1}
+            <li>
+                <div class="first">
+                    <div class="first-photo"></div>
+                    <div class="first-name">
+                        <div class="fn">
+                            <span>Jim.Green</span><span class="iconfont icon-xihuan shoucang"></span><span>28390</span>
+                        </div>
+                        <div> 特价处理机不可失是不再来</div>
+                    </div>
+                    <div class="address">
+                        <div>{$v1["address"]}</div>
+                        <div>BEIJING</div>
+                    </div>
+                    <div class="iconfont icon-ditu dizhi"></div>
+                </div>
+                <ul class="product-list">
+                    <li>
+                        <a href="">
+                            <img src="{IMG_PATH}/{$v1['img']}" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="{IMG_PATH}/index-p2.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="{IMG_PATH}/index-p3.png" alt="">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="{IMG_PATH}/index-more.png" alt="" class="imgmore">
+                        </a>
+                    </li>
+                </ul>
+                <div class="product-title">
+                    <span class="jianbian">超值数码系列</span>
+                    <span>Charm of travel</span>
+                    <em class="hot">HOT</em>
+                    <span class="package "></span>
+                </div>
+                <div class="xu"></div>
+                <div class="pro-con">{$v1["info"]}</div>
+                <span class="price">RMB {$v1["price"]}</span>
+                <div class="line"></div>
+            </li>
+            {/foreach}
+        </ul>
+    </div>
+</body>
+<script>
+    var back=document.querySelector(".return");
+    back.onclick=function(){
+        history.go(-1);
+    }
+</script>
+</html>

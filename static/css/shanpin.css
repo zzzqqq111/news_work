@@ -1,0 +1,66 @@
+.box{
+    width: 7.5rem;
+    height: 13.34rem;
+    overflow: hidden;
+    position: relative;
+}
+.box ul {
+    width: 22.5rem;
+    height: 100%;
+    padding:0;
+    margin:0;
+    position: absolute;
+    left: 0;
+    top:0;
+}
+.box ul li{
+    width: 7.5rem;
+    height: 100%;
+    float: left;
+    background: #F6F6F6;
+    position: relative;
+}
+.box ul li a{
+    display: block;
+}
+img{
+    display: block;
+    margin: 0 auto;
+}
+.f1{
+    width: 2.36rem;
+    height: 0.82rem;
+    margin-top: 1rem;
+}
+.f2{
+    width: 3.36rem;
+    height: 3.43rem;
+    margin-top: 1.85rem;
+    /*animation: shake .1s linear backwards;*/
+}
+.f3{
+    width: 6.52rem;
+    height: 2.55rem;
+    margin-top: 1.08rem;
+    /*animation: pingyi .3s linear forwards;*/
+}
+/*@keyframes pingyi {*/
+    /*0%{*/
+        /*transform: translateX(-10px);*/
+    /*}*/
+    /*100%{*/
+        /*transform: translateX(10px);*/
+    /*}*/
+/*}*/
+button{
+    width: 3.14rem;
+    height: 0.81rem;
+    background: #2371f1;
+    border: 0.02rem solid #FFFFFF;
+    position: absolute;
+    left: 0;
+    bottom: 0.6rem;
+    right: 0;
+    margin: auto;
+    color: #FFFFFF;
+}

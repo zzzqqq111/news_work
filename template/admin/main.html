@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!--<link rel="stylesheet" href="{CSS_PATH}/base.css">-->
+    <script src="{JS_PATH}/jquery.js"></script>
+
+    <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+        }
+
+        .box .left > ul > li a{
+            text-decoration: none;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        header {
+            width: 100%;
+            height: 15%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            background: #F9F9F9;
+            box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.6);
+            margin-bottom: 2%;
+        }
+
+        .box {
+            width: 100%;
+            height: 80%;
+        }
+
+        .box .left {
+            float: left;
+            width: 20%;
+            height: 100%;
+            box-sizing: border-box;
+            margin-left: 9%;
+            margin-right: 1%;
+            background: #fff;
+            box-shadow: 0 0 10px 2px #ccc;
+        }
+
+        .box .left span.text {
+            width: 100%;
+            height: 30px;
+            display: block;
+            margin-top: 20px;
+            margin-bottom:20px;
+            font-size: 18px;
+            font-weight: bold;
+            color: #6B6B6B;
+            padding-left:20px;
+            line-height: 50px;
+        }
+
+        .box .left > ul > li {
+            width: 100%;
+            font-size: 18px;
+            padding-left:40px;
+            line-height: 30px;
+            margin-bottom:10px;
+            background:blue;
+            list-style: none;
+        }
+
+        .box .left > ul > li a {
+            color: #fff;
+        }
+
+        .box .left > ul > li > ul.content {
+            display: none;
+            padding-left: 20px;
+            transition: all linear 2s;
+        }
+
+        .box .left > ul > li > ul.content > li {
+            height: 30px;
+            font-size: 16px;
+            line-height: 20px;
+        }
+
+        .box .right {
+            float: left;
+            width: 60%;
+            height: 100%;
+            background: #6BA3FF;
+            border-radius: 10px;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    欢迎{$name}来到新闻管理系统
+
+</header>
+<div class="box">
+    <div class="left">
+        <span class="text">全部功能</span>
+        <ul>
+            <li>
+                <a href="javascript:;">用户管理</a>
+                <ul class="content">
+                    <li>
+                        <a href="index.php?m=admin&f=user&a=add" target="iframe">添加用户</a>
+                    </li>
+
+                    <li>
+                        <a href="index.php?m=admin&f=user&a=showUser" target="iframe">查看用户</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="javascript:;">角色管理</a>
+                <ul class="content">
+                    <li>
+                        <a href="index.php?m=admin&f=role&a=add" target="iframe">添加角色</a>
+                    </li>
+
+                    <li>
+                        <a href="index.php?m=admin&f=role&a=showRole" target="iframe">查看角色</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="javascript:;">分类管理</a>
+                <ul class="content">
+                    <li>
+                        <a href="index.php?m=admin&f=category&a=add" target="iframe">添加分类</a>
+                    </li>
+
+                    <li>
+                        <a href="index.php?m=admin&f=category&a=select" target="iframe">查看分类</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="javascript:;">推荐位管理</a>
+                <ul class="content">
+                    <li>
+                        <a href="index.php?m=admin&f=position&a=add" target="iframe">添加推荐位</a>
+                    </li>
+
+                    <li>
+                        <a href="index.php?m=admin&f=position&a=showpos" target="iframe">查看推荐位</a>
+                    </li>
+                </ul>
+            </li>
+
+
+            <li>
+                <a href="javascript:;">内容管理</a>
+                <ul class="content">
+                    <li>
+                        <a href="index.php?m=admin&f=lists&a=list1" target="iframe">添加内容</a>
+                    </li>
+
+                    <li>
+                        <a href="index.php?m=admin&f=lists&a=select" target="iframe">查看内容</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <span>
+                    <a href="index.php?m=admin&f=login&a=logout">安全退出</a>
+                </span>
+                <br>
+
+            </li>
+            <li>
+                <span>
+                    <a href="index.php" target="_blank">进入主页</a>
+                </span>
+            </li>
+
+        </ul>
+    </div>
+    <div class="right">
+        <iframe src="welcome.html" frameborder="0" name="iframe">
+        </iframe>
+    </div>
+</div>
+
+</body>
+
+<script>
+    $(".box .left>ul>li>a").click(function () {
+        $(this).nextAll("ul.content").toggle();
+    })
+</script>
+</html>

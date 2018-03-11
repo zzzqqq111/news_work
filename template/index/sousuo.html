@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{CSS_PATH}/ss.css">
+    <link rel="stylesheet" href="{CSS_PATH}/base.css">
+    <script src="{JS_PATH}/jquery.js"></script>
+    <script src="{JS_PATH}/yidong.js"></script>
+</head>
+<body style="background: #F5F5F5;">
+<header>
+    <span class="title">搜索与查找<br>SEARCH AND FIND </span>
+    <span class="return">&#xe658;</span>
+    <span class="return jingque">&#xe61d;</span>
+    <form action="index.php?m=index&f=search&a=selectByKey" method="post" class="ss">
+        <div class="ss-title">
+            <span>Title</span>
+            <span class="dash"></span>
+            <input type="text" placeholder="Please find here" class="" name="keywords">
+        </div>
+        <input type="submit" class="iconfont paizhao" value="搜索">
+    </form>
+</header>
+<main>
+    <div class="main-con">
+        <div class="fenlei">
+            <div class="fenlei-ss"></div>
+            <ul class="lunbo">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+        <ul class="shebei">
+            {foreach $res as $v}
+            <li>
+                <a href="">
+                    <div class="iconfont shebei-left">&#xe612;</div>
+                    <div class="rifht">
+                        <div>MOBILE DEVICE</div>
+                        <div class="sbname">{{$v["cname"]}}</div>
+                    </div>
+                </a>
+            </li>
+            {/foreach}
+        </ul>
+        <div class="fenge"></div>
+        <div class="fenlei">
+            <div class="fenlei-ss ss1"></div>
+            <div class="down"></div>
+        </div>
+        <ul class="hotwords">
+            <li>
+                <a href="">
+                    手机
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    时尚数码
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    实用的迷你数码
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    数码
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    迷你
+                    迷你
+                </a>
+            </li>
+        </ul>
+        <div class="fenge" style="margin-top: 0.77rem;margin-bottom: 0.23rem"></div>
+        <div class="fenlei">
+            <div class="fenlei-ss ss2"></div>
+        </div>
+        <div class="hot-con-product">
+            <ul>
+                {foreach $r as $v}
+                <li>
+                    <a href="index.php?m=index&f=search&a=selectById&id={$v['lid']}">
+                        <div class="host-ss">
+                            <img src="{$v['img']}" alt="">
+                            <div class="mohu"></div>
+                            <div class="hanzi">
+                                <div>FEILEIPAIHANG</div>
+                                <span></span><span style="float: right;font-size: 0.18rem">5.0vol</span>
+                            </div>
+                        </div>
+
+                        <div class="product-info">
+                            <div class="pinfo-left"></div>
+                            <div class="pinfo-right">
+                                <div class="name">{$v["uname"]}</div>
+                                <div class="xihuan">122</div>
+                            </div>
+                        </div>
+                    </a>
+                </li>
+                {/foreach}
+            </ul>
+        </div>
+
+    </div>
+
+
+</main>
+</body>
+<script>
+    var back = document.querySelector(".return");
+    back.onclick = function () {
+        history.go(-1);
+    }
+    $(".shebei").on("touchstart", function(e) {
+        e.preventDefault();
+        startX = e.originalEvent.changedTouches[0].pageX,
+        startY = e.originalEvent.changedTouches[0].pageY;
+    });
+    $(".shebei").on("touchmove", function(e) {
+        e.preventDefault();
+        var moveEndX = e.originalEvent.changedTouches[0].pageX;
+        var moveEndY = e.originalEvent.changedTouches[0].pageY;
+        var X = moveEndX - startX;
+        var Y = moveEndY - startY;
+
+        if ( X > 0 ) {
+            $(".shebei").css("marginLeft",X+"px")
+        }
+        else if ( X < 0 ) {
+            $(".shebei").css("marginLeft",X+"px")
+        }
+        else{
+            alert("just touch");
+        }
+    });
+</script>
+</html>

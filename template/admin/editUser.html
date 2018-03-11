@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{CSS_PATH}/bootstrap.min.css">
+    <script src="{JS_PATH}/upload.js"></script>
+    <script>
+        window.onload=function(){
+            var closeBtn=document.querySelector(".closeBtn");
+            console.log(closeBtn);
+
+            closeBtn.onclick=function(){
+                var id=this.id;
+                var ajax=new XMLHttpRequest();
+                ajax.open("post","index.php?m=admin&f=user&a=delImg");
+                ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
+                ajax.send("uid="+id);
+                ajax.onload=function(){
+                    if(ajax.response=="ok"){
+                        closeBtn.parentNode.parentNode.removeChild(closeBtn.parentNode);
+                    }
+                }
+
+            }
+        }
+    </script>
+</head>
+<body>
+<form action="index.php?m=admin&f=user&a=editUser" method="post">
+    {foreach $result as $v}
+    <input type="hidden" class="form-control" value="{$v['uid']}" name="uid">
+    <div class="form-group">
+        <label>用户名</label>
+        <input type="text" class="form-control" value="{$v['uname']}" name="uname">
+    </div>
+    <div class="form-group">
+        <label>密码</label>
+        <input type="text" class="form-control" value="{$v['upwd']}" name="upass">
+    </div>
+    <div class="form-group">
+        <label>电话</label>
+        <input type="text" class="form-control" value="{$v['uphone']}" name="uphone">
+    </div>
+
+    <input type="hidden" value="" name="cid">
+
+    <input type="hidden" name="imgUrl">
+    预览图片:
+    <div class="preview" style="position: relative;width:150px;">
+        <img src="{{$v['uimg']}}" width=150 alt="">
+        <div class="closeBtn" style="width:20px;height:20px;text-align: center;line-height: 20px;position: absolute;right:0;top:0; font-size: 20px" id="{$v['uid']}">
+            X
+        </div>
+    </div>
+    <div class="uploadbox"></div>
+
+    {/foreach}
+    <button type="submit" class="btn btn-default">编辑</button>
+</form>
+
+</body>
+<script>
+    var obj = new upload();
+    obj.createView({
+        parent: document.querySelector(".uploadbox")
+    })
+    obj.up("index.php?m=admin&f=upload&a=move", function (data) {
+        document.querySelector("input[name='imgUrl']").value = data;
+    });
+
+
+</script>
+</html>

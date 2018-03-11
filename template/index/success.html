@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="{CSS_PATH}/base.css">
+    <script src="{JS_PATH}/rem.js"></script>
+    <script src="{JS_PATH}/jquery.js"></script>
+</head>
+<style>
+    @font-face {
+        font-family: 'iconfont';  /* project id 348180 */
+        src: url('//at.alicdn.com/t/font_348180_wt82z0pt4ixgk3xr.eot');
+        src: url('//at.alicdn.com/t/font_348180_wt82z0pt4ixgk3xr.eot?#iefix') format('embedded-opentype'),
+        url('//at.alicdn.com/t/font_348180_wt82z0pt4ixgk3xr.woff') format('woff'),
+        url('//at.alicdn.com/t/font_348180_wt82z0pt4ixgk3xr.ttf') format('truetype'),
+        url('//at.alicdn.com/t/font_348180_wt82z0pt4ixgk3xr.svg#iconfont') format('svg');
+    }
+    .return{
+        float: left;
+        color: #ffffff;
+        font-size: 0.4rem;
+        text-align: center;
+        font-family: 'iconfont';
+    }
+    main{
+        width: 100%;
+        height: 12.95rem;
+        position: relative;
+    }
+    main img{
+        width: 100%;
+        height: 100%;
+    }
+    .return{
+        float: left;
+        color: #1894CD;
+        font-size: 0.4rem;
+        text-align: center;
+        font-family: 'iconfont';
+        position: absolute;
+        top: 0.3rem;
+        left: 0.3rem;
+    }
+</style>
+<body>
+    <main>
+        <img src="{IMG_PATH}/sucess.png" alt="">
+        <div class="return">&#xe658;</div>
+    </main>
+</body>
+<script>
+    $(".return").click(function () {
+        history.go(-1);
+    })
+</script>
+</html>

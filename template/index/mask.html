@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="{CSS_PATH}/ss.css">
+    <link rel="stylesheet" href="{CSS_PATH}/base.css">
+    <script src="{JS_PATH}/jquery.js"></script>
+    <script src="{JS_PATH}/yidong.js"></script>
+    <style>
+        body,html{
+            width:100%;
+            height:100%;
+        }
+        .mask{
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.9);
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+        .mask-detail{
+            width: 7.02rem;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .mask-top{
+            width: 100%;
+            margin-top: 1.95rem;
+            overflow: hidden;
+            position: relative;
+            font-size: 0.2rem;
+        }
+        .center{
+            width: 100%;
+            height: 2.92rem;
+            background: #F7F7F7;
+            border-radius: 0.2rem;
+            padding: 0 0.4rem;
+        }
+        .xin{
+            height: 0.3rem;
+        }
+        .xian{
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 0.1rem;
+            background: linear-gradient(45deg,#296BE3,#25C6C6);
+        }
+        .img{
+            width: 100%;
+            height: 5.58rem;
+        }
+        .mask-btn{
+            width: 100%;
+            margin-top: 0.31rem;
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
+</head>
+<body>
+    <div class="mask">
+    <div class="mask-detail">
+        {foreach $re as $v}
+        <div class="mask-top">
+            <img src="{{$v['img']}}" class="img">
+            <div class="center">
+                <div class="xin"></div>
+                <div class="gexian"></div>
+                <ul class="btn1">
+                    <li>
+                        <a href="">minixiao</a>
+                    </li>
+                    <li>
+                        <a href="" class="xiadan">HOT digital</a>
+                    </li>
+                </ul>
+                <div class="moto">{{$v["info"]}}</div>
+                <ul class="xihuan">
+                    <li>
+                        <span>1101</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="xian"></div>
+        </div>
+        {/foreach}
+        <ul class="mask-btn">
+            <li>
+                <a href="">收藏<br><span style="font-size: 0.2rem">SHOUCANG</span></a>
+            </li>
+            <li>
+                <a href="" class="xiadan">下单<br><span style="font-size: 0.2rem">XIADAN</span></a>
+            </li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>评论信息</title>
+    <link rel="stylesheet" href="../../static/css/base.css">
+    <link rel="stylesheet" href="../../static/css/pinglun.css">
+    <script src="../../static/js/rem.js"></script>
+    <script src="../../static/js/jquery.js"></script>
+</head>
+<body>
+<div class="header">
+    <p class="fanhuijiantou"> < </p>
+    <div class="center">
+        <p class="c-top">评论信息</p>
+        <p class="c-bottom">PINGLUNXINXI</p>
+        <div class="plfs">
+            <div class="sd">· 手动评论 ·</div>
+            <div class="yy">· 语音评论 ·</div>
+        </div>
+    </div>
+</div>
+<form action="index.php?m=index&f=message&a=add">
+    <textarea name="mess-con" id="" cols="30" rows="10"></textarea>
+    <input type="submit" value="提交" class="tijiao">
+</form>
+
+</body>
+<script>
+  $(".yy").click(function () {
+      $(".yy").css({"background":" #285BED","color":"#fff"});
+      $(".sd").css({"background":" #fff","color":" #285BED"})
+  })
+  $(".sd").click(function () {
+      $(".sd").css({"background":" #285BED","color":"#fff"});
+      $(".yy").css({"background":" #fff","color":" #285BED"})
+  })
+</script>
+
+</html>

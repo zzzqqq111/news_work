@@ -1,0 +1,17 @@
+*{
+	margin: 0;
+	padding: 0;
+	text-decoration: none;/* 去除a标签下划线 */
+
+}
+input{
+
+	outline: none;
+}
+a{
+	color: #808080;
+}
+ul,li,ol{
+            	list-style: none;
+            }
+
